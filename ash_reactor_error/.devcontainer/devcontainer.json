@@ -1,0 +1,25 @@
+{
+  "name": "ash-reactor-error",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "workspaceFolder": "/workspace",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
+  "postCreateCommand": "mix deps.get",
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "[elixir]": {
+          "editor.formatOnSave": true
+        }
+      },
+       "extensions": [
+        "jakebecker.elixir-ls",
+        "ms-azuretools.vscode-docker"
+      ]
+    }
+  }
+}
